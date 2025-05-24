@@ -1111,3 +1111,289 @@ footer {
     font-size: 0.9rem;
 }
 
+
+/* Highlighted elements with green border */
+/* Removed green highlighting as requested */
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Center the highlighted services in the grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+}
+
+.services-highlighted-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-highlighted-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .highlighted-service,
+    .highlighted-process {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Process section positioned lower on page */
+.process.section-padding {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0 15vh 0;
+    margin: 0;
+    position: relative;
+}
+
+.process .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .process.section-padding {
+        min-height: auto;
+        padding: 5rem 0 10vh 0;
+    }
+}
+
+/* Decorative elements for homepage */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 83, 119, 0.05);
+    z-index: -1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(220, 53, 69, 0.05);
+    z-index: -1;
+}
+
+.decorative-shape-1 {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    border: 2px dashed rgba(0, 83, 119, 0.2);
+    border-radius: 10px;
+    transform: rotate(45deg);
+    z-index: -1;
+    animation: float 8s ease-in-out infinite;
+}
+
+.decorative-shape-2 {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(45deg, rgba(0, 83, 119, 0.05), rgba(220, 53, 69, 0.05));
+    border-radius: 20px;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite reverse;
+}
+
+.decorative-dots {
+    position: absolute;
+    top: 40%;
+    right: 15%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    z-index: -1;
+}
+
+.decorative-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 83, 119, 0.2);
+}
+
+.decorative-line {
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(220, 53, 69, 0.2), transparent);
+    z-index: -1;
+}
+
+.about-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 83, 119, 0.03) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.services {
+    position: relative;
+    overflow: hidden;
+}
+
+.services::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: -5%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220, 53, 69, 0.03) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.wave-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23005377'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23dc3545'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    z-index: -1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(45deg);
+    }
+}
+
+/* Increase font size for headings and blue text */
+.section-header h2 {
+    font-size: 3.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+}
+
+.service-card h3, 
+.process-step h3,
+.team-member h3,
+.mission-card h3,
+.approach-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .service-card h3, 
+    .process-step h3,
+    .team-member h3,
+    .mission-card h3,
+    .approach-card h3 {
+        font-size: 1.5rem;
+    }
+}
