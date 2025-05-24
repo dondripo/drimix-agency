@@ -3,227 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drimix - Design, Marketing & Branding Agency</title>
+    <title>Creative Agency - Modern Design</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <a href="index.html"><img src="images/drimix-logo.png" alt="DRIMIX" width="150"></a>
+                    <a href="index.html">LOGO</a>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="nav-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>We Create <span class="highlight">Digital Experiences</span> That Matter</h1>
-                <p>Design. Marketing. Branding. Community Management.</p>
-                <div class="hero-buttons">
-                    <a href="services.html" class="btn btn-primary">Our Services</a>
-                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                <h1>Creative Solutions for Modern Businesses</h1>
+                <p>We transform ideas into exceptional digital experiences</p>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Learn more about our creative agency</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>We Create Digital Experiences</h3>
+                    <p>Our creative agency specializes in delivering exceptional digital solutions that help businesses thrive in today's competitive landscape. With a focus on innovation and quality, we work closely with our clients to understand their unique needs and goals.</p>
+                    <p>Founded in 2020, we've quickly established ourselves as a leader in the industry, known for our creative approach and attention to detail. Our team of experts brings together diverse skills and perspectives to create truly remarkable results.</p>
+                    <a href="#contact" class="btn btn-secondary">Work With Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-placeholder.jpg" alt="About Our Agency">
                 </div>
             </div>
         </div>
-        <div class="hero-overlay"></div>
     </section>
 
-    <section class="services-preview">
+    <section id="services" class="services section-padding">
         <div class="container">
             <div class="section-header">
                 <h2>Our Services</h2>
-                <p>Comprehensive solutions for your brand</p>
+                <p>Explore what we can do for your business</p>
             </div>
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3>Design</h3>
-                    <p>Creative solutions that capture your brand's essence and appeal to your target audience.</p>
-                    <a href="services.html#design" class="read-more">Learn More</a>
+                    <h3>Brand Identity</h3>
+                    <p>We create distinctive brand identities that resonate with your target audience and set you apart from competitors.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3>Marketing</h3>
-                    <p>Strategic campaigns that increase visibility and drive meaningful engagement with your brand.</p>
-                    <a href="services.html#marketing" class="read-more">Learn More</a>
+                    <h3>Web Development</h3>
+                    <p>Our expert developers build responsive, user-friendly websites that deliver exceptional experiences.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-layer-group"></i>
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Branding</h3>
-                    <p>Cohesive brand identities that communicate your values and resonate with your audience.</p>
-                    <a href="services.html#branding" class="read-more">Learn More</a>
+                    <h3>Mobile Apps</h3>
+                    <p>We design and develop intuitive mobile applications that engage users and drive business growth.</p>
                 </div>
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Community Management</h3>
-                    <p>Building and nurturing engaged communities around your brand and products.</p>
-                    <a href="services.html#community" class="read-more">Learn More</a>
+                    <h3>Digital Marketing</h3>
+                    <p>Our strategic marketing approaches help you reach your audience and achieve measurable results.</p>
                 </div>
-            </div>
-            <div class="section-footer">
-                <a href="services.html" class="btn btn-primary">View All Services</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="about-preview">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image animate-on-scroll">
-                    <div class="image-container">
-                        <!-- Placeholder for an actual image -->
-                        <div class="placeholder-image"></div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
                     </div>
+                    <h3>Photography</h3>
+                    <p>Professional photography services that capture your brand's essence and elevate your visual content.</p>
                 </div>
-                <div class="about-content animate-on-scroll">
-                    <div class="section-header">
-                        <h2>About Us</h2>
-                        <p>Your vision, our expertise</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
                     </div>
-                    <p>We are a passionate team of creatives, strategists, and digital experts dedicated to transforming brands through innovative design, strategic marketing, and authentic community engagement.</p>
-                    <p>With our minimalist approach, we focus on what truly matters: creating meaningful connections between your brand and your audience.</p>
-                    <a href="about.html" class="btn btn-secondary">Our Story</a>
+                    <h3>Video Production</h3>
+                    <p>Compelling video content that tells your story and engages your audience across platforms.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials">
+    <section id="portfolio" class="portfolio section-padding">
         <div class="container">
             <div class="section-header">
-                <h2>What Our Clients Say</h2>
-                <p>Success stories from brands we've transformed</p>
+                <h2>Our Portfolio</h2>
+                <p>Check out some of our recent work</p>
             </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide active">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>"Working with Drimix transformed our brand identity. Their minimalist approach and strategic thinking helped us connect with our audience in ways we never imagined."</p>
-                        <div class="client-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>CEO, Innovate Solutions</p>
+            <div class="portfolio-slider">
+                <div class="slider-container">
+                    <div class="slide">
+                        <img src="images/portfolio-1.jpg" alt="Portfolio Item 1">
+                        <div class="slide-overlay">
+                            <h3>Brand Identity</h3>
+                            <p>Client: Tech Innovations</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/portfolio-2.jpg" alt="Portfolio Item 2">
+                        <div class="slide-overlay">
+                            <h3>Website Redesign</h3>
+                            <p>Client: Eco Solutions</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/portfolio-3.jpg" alt="Portfolio Item 3">
+                        <div class="slide-overlay">
+                            <h3>Mobile Application</h3>
+                            <p>Client: Fitness Connect</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>"The team at Drimix doesn't just deliver beautiful designs, they create strategic assets that drive real business results. Their community management has doubled our engagement."</p>
-                        <div class="client-info">
-                            <h4>Michael Chen</h4>
-                            <p>Marketing Director, TechForward</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                        <p>"From concept to execution, Drimix exceeded our expectations. Their ability to translate our vision into a cohesive brand identity while maintaining a clean, minimalist aesthetic was impressive."</p>
-                        <div class="client-info">
-                            <h4>Emma Rodriguez</h4>
-                            <p>Founder, Sustainable Style</p>
-                        </div>
-                    </div>
+                <div class="slider-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
-            <div class="slider-controls">
-                <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
-                <div class="slider-dots">
-                    <span class="dot active" data-slide="0"></span>
-                    <span class="dot" data-slide="1"></span>
-                    <span class="dot" data-slide="2"></span>
+            
+            <div class="portfolio-gallery">
+                <div class="gallery-item">
+                    <img src="images/gallery-1.jpg" alt="Gallery Item 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-plus"></i>
+                    </div>
                 </div>
-                <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+                <div class="gallery-item">
+                    <img src="images/gallery-2.jpg" alt="Gallery Item 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-3.jpg" alt="Gallery Item 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-4.jpg" alt="Gallery Item 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-5.jpg" alt="Gallery Item 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-6.jpg" alt="Gallery Item 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="cta">
+    <section id="testimonials" class="testimonials section-padding">
         <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2>Ready to Transform Your Brand?</h2>
-                <p>Let's create something amazing together.</p>
-                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about us</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Working with this agency was a game-changer for our business. Their creative approach and attention to detail exceeded our expectations."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-1.jpg" alt="Client 1">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, Tech Innovations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The team delivered an exceptional website that perfectly captures our brand identity. Their communication and professionalism were outstanding."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-2.jpg" alt="Client 2">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Marketing Director, Eco Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"From concept to execution, they guided us through the entire process with expertise and creativity. The results have transformed our digital presence."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/testimonial-3.jpg" alt="Client 3">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Founder, Fitness Connect</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Start a Conversation</h3>
+                    <p>We'd love to hear about your project and how we can help bring your vision to life.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Creative Street, Design City, 10001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@creativeagency.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <div class="footer-logo"><img src="images/drimix-logo.png" alt="DRIMIX" width="120"></div>
-                    <p>Design. Marketing. Branding. Community.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">LOGO</a>
                 </div>
                 <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#design">Design</a></li>
-                        <li><a href="services.html#marketing">Marketing</a></li>
-                        <li><a href="services.html#branding">Branding</a></li>
-                        <li><a href="services.html#community">Community Management</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> hello@drimix.xyz</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Creative St, Design City</li>
-                    </ul>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#services">Brand Identity</a></li>
+                            <li><a href="#services">Web Development</a></li>
+                            <li><a href="#services">Mobile Apps</a></li>
+                            <li><a href="#services">Digital Marketing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <p>Subscribe to our newsletter</p>
+                        <form class="footer-subscribe">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Drimix Agency. All rights reserved.</p>
+                <p>&copy; 2025 Creative Agency. All rights reserved.</p>
             </div>
         </div>
-        <div class="footer-credit">
-            <p>Website made by Drimix Agency</p>
-        </div>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <img src="" alt="Lightbox Image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
