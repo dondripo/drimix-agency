@@ -330,7 +330,7 @@ nav {
     gap: 1rem;
 }
 
-/* ===== Section Headers (Updated Underline) ===== */
+/* ===== Section Headers ===== */
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -338,20 +338,19 @@ nav {
 
 .section-header h2 {
     position: relative;
-    display: inline-block; /* Changed to inline-block for width calculation */
+    display: inline-block;
     margin-bottom: 1rem;
-    padding-bottom: 10px; /* Add padding to make space for underline */
 }
 
 .section-header h2::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Position underline at the bottom */
-    left: 0; /* Align underline to the left of the inline-block */
-    width: 100%; /* Make underline match the width of the h2 */
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
     height: 4px;
     background-color: var(--accent);
-    /* Remove transform: translateX(-50%); as it's not needed with left: 0 and width: 100% */
 }
 
 .section-header p {
@@ -2108,341 +2107,60 @@ body.custom-cursor-active .custom-select-trigger:hover {
 
 
 
-/* ===== Hero Section Layout Update ===== */
+/* ===== Hero Logo Styles ===== */
 .hero-flex-container {
     display: flex;
-    align-items: center; /* Vertically center items */
-    justify-content: space-between; /* Space between text and image */
-    height: 100%; /* Ensure container takes full height */
+    justify-content: space-between; /* Pushes content and logo apart */
+    align-items: center; /* Vertically centers items */
     width: 100%;
 }
 
-.hero-content {
-    flex-basis: 55%; /* Adjust text width - slightly more than half */
-    padding-right: 3rem; /* Add some space between text and image */
-    text-align: left; /* Ensure text is left-aligned */
-}
-
-.hero-image-container {
-    flex-basis: 40%; /* Allocate space for the image */
+.hero-logo-container {
+    flex-basis: 45%; /* Adjust as needed for visual balance */
     display: flex;
-    justify-content: center; /* Horizontally center the image */
-    align-items: center; /* Vertically center the image */
-    height: 100%; /* Ensure container takes full available height */
+    justify-content: flex-end; /* Aligns logo to the right within its container */
+    align-items: center; /* Vertically centers logo */
+    padding-left: 2rem; /* Add some space between text and logo */
+    position: relative; /* Keep */
+    z-index: 1; /* Keep */
 }
 
 .hero-logo {
-    max-width: 100%; /* Ensure logo scales down if needed */
-    max-height: 70vh; /* Limit logo height to prevent overflow */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Ensures logo scales down */
+    width: 450px; /* Adjust for desired dominance, can use % too */
+    height: auto;
+    display: block; /* Removes extra space below image */
 }
 
-/* Remove old placeholder styles if they exist */
-.hero-image-placeholder {
-    display: none; /* Hide old placeholder */
-}
-
-
-
-
-/* ===== Hero Section Responsive Adjustments (Updated for Larger Logo) ===== */
-@media (max-width: 992px) { /* Adjust breakpoint as needed for tablets */
-    .hero-content {
-        flex-basis: 48%; /* Adjusted basis for tablet */
-        padding-right: 1.5rem;
-    }
-    .hero-image-container {
-        flex-basis: 50%; /* Adjusted basis for tablet */
-    }
-    .hero-logo {
-        max-height: 60vh; /* Adjust max height for tablet */
-    }
-    .hero-content h1 {
-        font-size: 3.2rem; /* Slightly smaller heading */
-    }
-}
-
-@media (max-width: 768px) { /* Adjust breakpoint as needed for mobile */
-    .hero {
-        height: auto; /* Allow height to adjust to content */
-        min-height: 90vh; /* Still take significant height */
-        padding-top: 100px; /* Adjust padding for header */
-        padding-bottom: 4rem;
-    }
+/* Responsive adjustments for hero logo */
+@media (max-width: 992px) {
     .hero-flex-container {
-        flex-direction: column; /* Stack elements vertically */
-        text-align: center; /* Center text */
+        flex-direction: column; /* Stack content and logo */
+        text-align: center;
     }
     .hero-content {
-        flex-basis: auto; /* Reset basis */
-        width: 100%;
-        padding-right: 0; /* Remove padding */
-        order: 2; /* Display text below image */
-        text-align: center;
-        margin-top: 2rem; /* Add space above text */
+        flex-basis: 100%;
+        padding-right: 0;
+        margin-bottom: 2rem;
+        max-width: 100%;
     }
-    .hero-image-container {
-        flex-basis: auto; /* Reset basis */
-        width: 90%; /* Increased width for larger logo feel */
-        max-width: 400px; /* Increased max logo width on mobile */
-        order: 1; /* Display image above text */
-        height: auto; /* Adjust height */
-        margin: 0 auto; /* Center container */
+    .hero-logo-container {
+        flex-basis: 100%;
+        justify-content: center; /* Center logo when stacked */
+        padding-left: 0;
+        margin-top: 2rem;
     }
     .hero-logo {
-        max-height: 45vh; /* Slightly increased max height for mobile */
+        width: 300px; /* Adjust size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 250px; /* Further adjust size */
     }
     .hero-content h1 {
-        font-size: 2.5rem; /* Further adjust heading size for mobile */
+        font-size: 3.5rem; /* Adjust heading size */
     }
-    .hero-content p {
-        font-size: 1rem;
-    }
-    .hero-buttons {
-        justify-content: center; /* Center buttons */
-    }
-}
-
-
-
-
-/* ===== Hero Section Layout Update (Font Revert, Logo Size/Pos/Align Top) ===== */
-.hero-flex-container {
-    display: flex;
-    align-items: flex-start; /* Align items to the top */
-    justify-content: space-between; /* Keep space-between */
-    height: 100%; /* Ensure container takes full height */
-    width: 100%;
-}
-
-.hero-content {
-    flex-basis: 20%; /* Keep text area relatively small */
-    padding-right: 1rem; /* Minimal space */
-    padding-left: 0; /* Ensure no extra left padding */
-    text-align: left; /* Ensure text is left-aligned */
-    padding-top: 2rem; /* Add some padding to align text top nicely */
-}
-
-/* Revert hero h1 font size */
-.hero-content h1 {
-    font-size: 4rem; /* Reverted to a smaller size */
-    line-height: 1.25; /* Adjusted line-height for new size */
-    margin-bottom: 1rem; /* Keep reduced margin-bottom */
-}
-
-.hero-image-container {
-    flex-basis: 55%; /* Adjusted basis for very large logo */
-    margin-left: auto; /* Push container to the right */
-    padding-left: 2rem; /* Add some padding from the left content */
-    display: flex;
-    justify-content: flex-end; /* Align logo to the right edge */
-    align-items: flex-start; /* Align logo to the top */
-    height: 100%; /* Ensure container takes full available height */
-}
-
-.hero-logo {
-    /* Increase size by 200% from previous large version -> aim for max impact */
-    max-width: 100%; /* Allow logo to take full container width */
-    width: auto; /* Let height dictate size primarily */
-    max-height: 150vh; /* Significantly increased max-height again */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space below image */
-    object-fit: contain; /* Ensure logo scales nicely */
-}
-
-/* Remove old placeholder styles if they exist */
-.hero-image-placeholder {
-    display: none; /* Hide old placeholder */
-}
-
-
-
-
-/* ===== Header Logo Alignment ===== */
-/* 
-  Alignment Note: The header logo (.logo) and the hero text block (.hero-content) 
-  are both positioned within a `.container` element which has consistent padding (0 1rem).
-  The `.hero-content` has `padding-left: 0;`, aligning it to the container's left padding edge.
-  The `.logo` is the first element in the `nav` flex container, also aligning it to the container's left padding edge.
-  Therefore, they should naturally align vertically along the same guide line.
-  No additional CSS is added here unless specific misalignment is observed.
-*/
-
-
-
-
-/* ===== Contact Form Font Consistency ===== */
-/* Ensure custom select trigger font matches other inputs */
-.budget-input-group .custom-select-trigger {
-    font-family: 'Oswald', sans-serif !important; /* Match input font */
-    font-size: 1rem !important; /* Match input font size (adjust if needed) */
-    color: #000000 !important; /* Ensure black text */
-    /* Keep other styles like padding, border, etc. */
-    border: 1px solid #e1e1e1;
-    padding: 0.8rem 1rem;
-    border-radius: 5px;
-    background-color: var(--white);
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    line-height: 1.6; /* Match input line height */
-    transition: none !important; /* Ensure no transition */
-    animation: none !important; /* Ensure no animation */
-}
-
-/* Ensure custom options font matches */
-.budget-input-group .custom-option {
-    font-family: 'Oswald', sans-serif !important; /* Match input font */
-    font-size: 1rem !important; /* Match input font size */
-    color: #000000 !important; /* Ensure black text */
-    transition: none !important;
-    animation: none !important;
-}
-
-/* Re-apply hover/selected styles for options with correct font */
-.budget-input-group .custom-option:hover {
-    background-color: #f0f0f0 !important; /* Simple hover effect */
-}
-
-.budget-input-group .custom-option.selected {
-    background-color: #e0e0e0 !important;
-    font-weight: bold; /* Keep bold for selected */
-}
-
-/* Remove redundant/conflicting styles from previous budget section overrides if necessary */
-/* (Reviewing previous CSS additions for budget group) */
-/* The styles added previously for .budget-input-group .custom-select-trigger */
-/* and .budget-input-group .custom-option seem mostly compatible, */
-/* but let's ensure font-family and font-size are explicitly set here. */
-
-
-
-
-
-/* Adjust Hero H1 line-height for better readability */
-.hero-content h1 {
-    line-height: 1.2; /* Slightly reduced line-height */
-    margin-bottom: 1rem; /* Reduced margin-bottom */
-}
-
-
-
-
-/* ===== Contact Form Budget Field Final Adjustments ===== */
-/* Ensure budget input field font matches */
-.budget-input-group .budget-amount input[type="text"] {
-    font-family: 'Oswald', sans-serif !important; /* Match other inputs */
-    font-size: 1rem !important; /* Match other inputs */
-    color: #000000 !important; /* Ensure black text */
-    line-height: 1.6; /* Match input line height */
-    /* Remove any specific hover effects if they exist */
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important; /* Keep focus style transition */
-    animation: none !important;
-}
-
-/* Ensure currency dropdown trigger font matches and remove hover effects */
-.budget-input-group .custom-select-trigger {
-    font-family: 'Oswald', sans-serif !important; /* Match input font */
-    font-size: 1rem !important; /* Match input font size */
-    color: #000000 !important; /* Ensure black text */
-    border: 1px solid #e1e1e1;
-    padding: 0.8rem 1rem;
-    border-radius: 5px;
-    background-color: var(--white);
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    line-height: 1.6; /* Match input line height */
-    transition: none !important; /* Explicitly remove transitions */
-    animation: none !important; /* Explicitly remove animations */
-}
-
-/* Remove hover effects from the group itself */
-.budget-input-group:hover,
-.budget-input-group .budget-amount:hover,
-.budget-input-group .budget-currency-select:hover,
-.budget-input-group .custom-select-wrapper:hover,
-.budget-input-group .custom-select-trigger:hover {
-    transform: none !important;
-    box-shadow: none !important; /* Remove any potential hover shadows */
-    /* Ensure border doesn't change on hover, only focus */
-    border-color: #e1e1e1 !important; 
-}
-
-/* Keep focus styles for accessibility */
-.budget-input-group .budget-amount input[type="text"]:focus,
-.budget-input-group .custom-select-trigger:focus {
-    outline: none;
-    border-color: var(--secondary) !important; /* Use important if needed */
-    box-shadow: 0 0 0 2px rgba(102, 155, 188, 0.2) !important; /* Use important if needed */
-}
-
-/* Ensure options font is consistent */
-.budget-input-group .custom-option {
-    font-family: 'Oswald', sans-serif !important; 
-    font-size: 1rem !important; 
-    color: #000000 !important; 
-    transition: none !important;
-    animation: none !important;
-}
-
-.budget-input-group .custom-option:hover {
-    background-color: #f0f0f0 !important; 
-}
-
-.budget-input-group .custom-option.selected {
-    background-color: #e0e0e0 !important;
-    font-weight: bold;
-}
-
-
-
-
-
-/* ===== Navigation Link Underline on Hover ===== */
-.nav-links a {
-    position: relative; /* Needed for absolute positioning of pseudo-element */
-    text-decoration: none; /* Remove default underline */
-    padding-bottom: 5px; /* Add padding to make space for underline */
-}
-
-.nav-links a::after {
-    content: ";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0; /* Start with zero width */
-    height: 2px;
-    background-color: var(--accent); /* Use accent color */
-    transition: width 0.3s ease; /* Animate width */
-}
-
-.nav-links a:hover::after {
-    width: 100%; /* Expand underline to full width on hover */
-}
-
-/* Adjust section header underline (already done, just confirming) */
-.section-header h2 {
-    position: relative;
-    display: inline-block; 
-    margin-bottom: 1rem;
-    padding-bottom: 10px; 
-}
-
-.section-header h2::after {
-    content: ";
-    position: absolute;
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 4px;
-    background-color: var(--accent);
 }
 
