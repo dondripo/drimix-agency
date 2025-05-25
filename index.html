@@ -79,7 +79,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>We Create Digital Experiences</h3>
-                    <p>Drimix Agency is a creative agency founded in 2024 with the goal of helping brands grow through smart, visually engaging digital solutions. We collaborate closely with each client to understand their goals, challenges, and vision.</p>
+                    <p class="about-subtitle">Drimix Agency is a creative agency founded in 2024 with the goal of helping brands grow through smart, visually engaging digital solutions. We collaborate closely with each client to understand their goals, challenges, and vision.</p>
                     <p>With a flexible and hands-on approach, we offer services in content creation, branding, and social media management tailored to your unique business needs.</p>
                     <p>Let us know how we can support your next project.</p>
                     <a href="#contact" class="btn btn-primary">Contact Us</a>
@@ -421,20 +421,57 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formspree.io/f/xanogjre" method="POST" id="contact-form">
+                        <input type="hidden" name="_next" value="//YOUR_THANK_YOU_PAGE_URL_OR_LEAVE_BLANK_FOR_DEFAULT">
+                        <input type="hidden" name="_subject" value="New Contact Form Submission from Drimix Website">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" name="subject" placeholder="Subject" required>
                         </div>
+                        <!-- Budget Dropdown Start -->
+                        <div class="form-group budget-dropdown-group">
+                            <label for="budget-currency" class="sr-only">Budget Currency</label> <!-- Screen reader label -->
+                            <div class="custom-select-wrapper">
+                                <select name="budget_currency" id="budget-currency" required>
+                                    <option value="" disabled selected>Select Budget Currency...</option>
+                                    <option value="USD">USD - United States Dollar</option>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="GBP">GBP - British Pound Sterling</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                    <option value="AUD">AUD - Australian Dollar</option>
+                                    <option value="AED">AED - UAE Dirham</option>
+                                    <option value="INR">INR - Indian Rupee</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CHF">CHF - Swiss Franc</option>
+                                    <option value="CNY">CNY - Chinese Yuan</option>
+                                    <option value="SGD">SGD - Singapore Dollar</option>
+                                    <option value="NZD">NZD - New Zealand Dollar</option>
+                                    <option value="ZAR">ZAR - South African Rand</option>
+                                    <option value="BRL">BRL - Brazilian Real</option>
+                                    <option value="RUB">RUB - Russian Ruble</option>
+                                    <option value="KRW">KRW - South Korean Won</option>
+                                    <option value="MXN">MXN - Mexican Peso</option>
+                                    <option value="HKD">HKD - Hong Kong Dollar</option>
+                                    <option value="NOK">NOK - Norwegian Krone</option>
+                                    <option value="SEK">SEK - Swedish Krona</option>
+                                    <option value="TRY">TRY - Turkish Lira</option>
+                                    <option value="Other">Other (Specify in message)</option>
+                                </select>
+                                <div class="custom-select-trigger">Select Budget Currency...</div>
+                                <div class="custom-options"></div>
+                            </div>
+                        </div>
+                        <!-- Budget Dropdown End -->
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
+                        <p class="form-status"></p> <!-- To display submission status -->
                     </form>
                 </div>
             </div>
@@ -453,8 +490,8 @@
                         <ul>
                             <li><a href="#about">About Us</a></li>
                             <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Our Portfolio</a></li>
                             <li><a href="#team">Team</a></li>
+                            <li><a href="#portfolio">Our Portfolio</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
