@@ -2207,7 +2207,7 @@ body.custom-cursor-active .custom-select-trigger:hover {
 
 
 
-/* ===== Hero Section Layout Update (Final Logo Shift - Further Right) ===== */
+/* ===== Hero Section Layout Update (Font Revert, Logo Size/Pos Update) ===== */
 .hero-flex-container {
     display: flex;
     align-items: center; /* Vertically center items */
@@ -2217,26 +2217,36 @@ body.custom-cursor-active .custom-select-trigger:hover {
 }
 
 .hero-content {
-    flex-basis: 25%; /* Further reduced basis to push text far left */
+    flex-basis: 20%; /* Further reduced basis to push text far left */
     padding-right: 1rem; /* Minimal space */
     padding-left: 0; /* Ensure no extra left padding */
     text-align: left; /* Ensure text is left-aligned */
 }
 
+/* Revert hero h1 font size */
+.hero-content h1 {
+    font-size: 4.5rem; /* Reverted to previous size */
+    line-height: 1.2; /* Keep adjusted line-height */
+    margin-bottom: 1rem; /* Keep reduced margin-bottom */
+}
+
 .hero-image-container {
-    flex-basis: 50%; /* Adjusted basis */
-    margin-left: 25%; /* Significantly increased margin-left to push further right */
+    flex-basis: 45%; /* Adjusted basis */
+    margin-left: 35%; /* Significantly increased margin-left to push further right */
     display: flex;
-    justify-content: center; /* Horizontally center the image within its space */
+    justify-content: flex-end; /* Align logo to the right edge of its container */
     align-items: center; /* Vertically center the image */
     height: 100%; /* Ensure container takes full available height */
 }
 
 .hero-logo {
-    max-width: 100%; /* Allow logo to take full container width */
-    max-height: 90vh; /* Keep large max-height */
+    /* Increase size by 200% from current */
+    max-width: 150%; /* Allow logo to be larger than container if needed, adjust as necessary */
+    width: auto; /* Let height dictate size primarily */
+    max-height: 120vh; /* Significantly increased max-height for 200% increase */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below image */
+    object-fit: contain; /* Ensure logo scales nicely */
 }
 
 /* Remove old placeholder styles if they exist */
