@@ -1919,3 +1919,188 @@ footer {
     color: var(--accent);
 }
 
+
+
+
+/* ===== Budget Input Group Specific Styles ===== */
+.budget-input-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center; /* Align items vertically */
+}
+
+.budget-amount {
+    flex: 1; /* Take available space */
+}
+
+.budget-currency-select {
+    flex-basis: 150px; /* Fixed width for currency dropdown */
+}
+
+/* Ensure budget amount input has black text and placeholder */
+.budget-input-group .budget-amount input[type="number"] {
+    color: #000000 !important; /* Black text */
+    transition: none !important; /* Remove transition */
+    animation: none !important; /* Remove animation */
+}
+
+.budget-input-group .budget-amount input[type="number"]::placeholder {
+    color: #000000 !important; /* Black placeholder */
+    opacity: 0.7; /* Optional: slightly lighter placeholder */
+}
+
+/* Remove hover/focus effects specifically from budget group elements */
+.budget-input-group input:hover,
+.budget-input-group input:focus,
+.budget-input-group .custom-select-wrapper:hover,
+.budget-input-group .custom-select-wrapper.open .custom-select-trigger,
+.budget-input-group .custom-select-trigger:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: #e1e1e1 !important; /* Reset border color on focus/hover */
+}
+
+/* Ensure custom select in budget group has no extra animations/transitions */
+.budget-input-group .custom-select-wrapper,
+.budget-input-group .custom-select-trigger,
+.budget-input-group .custom-options,
+.budget-input-group .custom-option {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Style the custom select trigger in the budget group */
+.budget-input-group .custom-select-trigger {
+    border: 1px solid #e1e1e1;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    background-color: var(--white);
+    color: #000000 !important; /* Black text */
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; /* Ensure it behaves like other inputs */
+    line-height: 1.6; /* Match input line height */
+}
+
+.budget-input-group .custom-select-trigger::after {
+    content: '\25BC'; /* Down arrow */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+}
+
+/* Ensure custom options text color is black */
+.budget-input-group .custom-option {
+    color: #000000 !important;
+}
+
+.budget-input-group .custom-option:hover {
+    background-color: #f0f0f0 !important; /* Simple hover effect */
+}
+
+.budget-input-group .custom-option.selected {
+    background-color: #e0e0e0 !important;
+    font-weight: bold;
+}
+
+/* Override general form input styles if necessary */
+.contact-form .budget-input-group input,
+.contact-form .budget-input-group .custom-select-trigger {
+    color: #000000 !important;
+}
+
+.contact-form .budget-input-group input::placeholder {
+    color: #000000 !important;
+    opacity: 0.7;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+
+
+/* ===== Animated Cursor Styles ===== */
+.cursor-dot,
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allows clicking through the cursor */
+    border-radius: 50%;
+    z-index: 1100; /* Ensure it's above most elements */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.1s ease-out; /* Smooth appearance and movement */
+    will-change: transform;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent); /* Red color */
+}
+
+.cursor-trail {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(193, 33, 38, 0.3); /* Lighter red trail */
+    transition: opacity 0.3s ease, transform 0.2s ease-out; /* Slower trail movement */
+}
+
+/* Hide default cursor when custom cursor is active */
+body.custom-cursor-active {
+    cursor: none;
+}
+
+/* Show custom cursor when active */
+body.custom-cursor-active .cursor-dot,
+body.custom-cursor-active .cursor-trail {
+    opacity: 1;
+}
+
+/* Scale effect on hover over interactive elements */
+body.custom-cursor-active .cursor-trail.hover-active {
+    transform: scale(1.5);
+    background-color: rgba(193, 33, 38, 0.5);
+}
+
+/* Hide custom cursor when hovering over inputs/textareas */
+body.custom-cursor-active input:hover ~ .cursor-dot,
+body.custom-cursor-active input:hover ~ .cursor-trail,
+body.custom-cursor-active textarea:hover ~ .cursor-dot,
+body.custom-cursor-active textarea:hover ~ .cursor-trail,
+body.custom-cursor-active select:hover ~ .cursor-dot,
+body.custom-cursor-active select:hover ~ .cursor-trail,
+body.custom-cursor-active .custom-select-trigger:hover ~ .cursor-dot,
+body.custom-cursor-active .custom-select-trigger:hover ~ .cursor-trail {
+    opacity: 0;
+}
+
+/* Restore default cursor for inputs/textareas */
+body.custom-cursor-active input:hover,
+body.custom-cursor-active textarea:hover,
+body.custom-cursor-active select:hover,
+body.custom-cursor-active .custom-select-trigger:hover {
+    cursor: text; /* Or 'pointer' for select trigger */
+}
+
+/* Ensure select trigger gets pointer cursor */
+body.custom-cursor-active .custom-select-trigger:hover {
+    cursor: pointer;
+}
+

@@ -164,3 +164,67 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", handleSubmit);
 });
 
+
+
+
+    // Animated Cursor Logic
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorTrail = document.querySelector(".cursor-trail");
+    let mouseX = 0, mouseY = 0;
+    let trailX = 0, trailY = 0;
+    const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .custom-select-trigger');
+
+    // Check if the elements exist before proceeding
+    if (cursorDot && cursorTrail) {
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Move the dot instantly
+            cursorDot.style.transform = `translate3d(${mouseX - cursorDot.offsetWidth / 2}px, ${mouseY - cursorDot.offsetHeight / 2}px, 0)`;
+
+            // Add active class to body if not already present
+            if (!document.body.classList.contains('custom-cursor-active')) {
+                document.body.classList.add('custom-cursor-active');
+            }
+        });
+
+        // Animation loop for the trail
+        const animateTrail = () => {
+            // Lerp (linear interpolation) for smooth trailing effect
+            trailX += (mouseX - trailX) * 0.2;
+            trailY += (mouseY - trailY) * 0.2;
+
+            cursorTrail.style.transform = `translate3d(${trailX - cursorTrail.offsetWidth / 2}px, ${trailY - cursorTrail.offsetHeight / 2}px, 0)`;
+
+            requestAnimationFrame(animateTrail);
+        };
+
+        animateTrail();
+
+        // Add hover effects for interactive elements
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorTrail.classList.add('hover-active');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorTrail.classList.remove('hover-active');
+            });
+        });
+
+        // Hide cursor when leaving the window
+        document.addEventListener('mouseleave', () => {
+             if (cursorDot) cursorDot.style.opacity = '0';
+             if (cursorTrail) cursorTrail.style.opacity = '0';
+        });
+
+        // Show cursor when entering the window
+        document.addEventListener('mouseenter', () => {
+             if (cursorDot) cursorDot.style.opacity = '1';
+             if (cursorTrail) cursorTrail.style.opacity = '1';
+        });
+
+    } else {
+        console.warn("Cursor elements (.cursor-dot, .cursor-trail) not found in the DOM.");
+    }
+
