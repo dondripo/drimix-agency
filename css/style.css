@@ -2207,43 +2207,45 @@ body.custom-cursor-active .custom-select-trigger:hover {
 
 
 
-/* ===== Hero Section Layout Update (Font Revert, Logo Size/Pos Update) ===== */
+/* ===== Hero Section Layout Update (Font Revert, Logo Size/Pos/Align Top) ===== */
 .hero-flex-container {
     display: flex;
-    align-items: center; /* Vertically center items */
-    justify-content: space-between; /* Keep space-between for now */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Keep space-between */
     height: 100%; /* Ensure container takes full height */
     width: 100%;
 }
 
 .hero-content {
-    flex-basis: 20%; /* Further reduced basis to push text far left */
+    flex-basis: 20%; /* Keep text area relatively small */
     padding-right: 1rem; /* Minimal space */
     padding-left: 0; /* Ensure no extra left padding */
     text-align: left; /* Ensure text is left-aligned */
+    padding-top: 2rem; /* Add some padding to align text top nicely */
 }
 
 /* Revert hero h1 font size */
 .hero-content h1 {
-    font-size: 4.5rem; /* Reverted to previous size */
-    line-height: 1.2; /* Keep adjusted line-height */
+    font-size: 4rem; /* Reverted to a smaller size */
+    line-height: 1.25; /* Adjusted line-height for new size */
     margin-bottom: 1rem; /* Keep reduced margin-bottom */
 }
 
 .hero-image-container {
-    flex-basis: 45%; /* Adjusted basis */
-    margin-left: 35%; /* Significantly increased margin-left to push further right */
+    flex-basis: 55%; /* Adjusted basis for very large logo */
+    margin-left: auto; /* Push container to the right */
+    padding-left: 2rem; /* Add some padding from the left content */
     display: flex;
-    justify-content: flex-end; /* Align logo to the right edge of its container */
-    align-items: center; /* Vertically center the image */
+    justify-content: flex-end; /* Align logo to the right edge */
+    align-items: flex-start; /* Align logo to the top */
     height: 100%; /* Ensure container takes full available height */
 }
 
 .hero-logo {
-    /* Increase size by 200% from current */
-    max-width: 150%; /* Allow logo to be larger than container if needed, adjust as necessary */
+    /* Increase size by 200% from previous large version -> aim for max impact */
+    max-width: 100%; /* Allow logo to take full container width */
     width: auto; /* Let height dictate size primarily */
-    max-height: 120vh; /* Significantly increased max-height for 200% increase */
+    max-height: 150vh; /* Significantly increased max-height again */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below image */
     object-fit: contain; /* Ensure logo scales nicely */
@@ -2325,5 +2327,122 @@ body.custom-cursor-active .custom-select-trigger:hover {
 .hero-content h1 {
     line-height: 1.2; /* Slightly reduced line-height */
     margin-bottom: 1rem; /* Reduced margin-bottom */
+}
+
+
+
+
+/* ===== Contact Form Budget Field Final Adjustments ===== */
+/* Ensure budget input field font matches */
+.budget-input-group .budget-amount input[type="text"] {
+    font-family: 'Oswald', sans-serif !important; /* Match other inputs */
+    font-size: 1rem !important; /* Match other inputs */
+    color: #000000 !important; /* Ensure black text */
+    line-height: 1.6; /* Match input line height */
+    /* Remove any specific hover effects if they exist */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important; /* Keep focus style transition */
+    animation: none !important;
+}
+
+/* Ensure currency dropdown trigger font matches and remove hover effects */
+.budget-input-group .custom-select-trigger {
+    font-family: 'Oswald', sans-serif !important; /* Match input font */
+    font-size: 1rem !important; /* Match input font size */
+    color: #000000 !important; /* Ensure black text */
+    border: 1px solid #e1e1e1;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    background-color: var(--white);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    line-height: 1.6; /* Match input line height */
+    transition: none !important; /* Explicitly remove transitions */
+    animation: none !important; /* Explicitly remove animations */
+}
+
+/* Remove hover effects from the group itself */
+.budget-input-group:hover,
+.budget-input-group .budget-amount:hover,
+.budget-input-group .budget-currency-select:hover,
+.budget-input-group .custom-select-wrapper:hover,
+.budget-input-group .custom-select-trigger:hover {
+    transform: none !important;
+    box-shadow: none !important; /* Remove any potential hover shadows */
+    /* Ensure border doesn't change on hover, only focus */
+    border-color: #e1e1e1 !important; 
+}
+
+/* Keep focus styles for accessibility */
+.budget-input-group .budget-amount input[type="text"]:focus,
+.budget-input-group .custom-select-trigger:focus {
+    outline: none;
+    border-color: var(--secondary) !important; /* Use important if needed */
+    box-shadow: 0 0 0 2px rgba(102, 155, 188, 0.2) !important; /* Use important if needed */
+}
+
+/* Ensure options font is consistent */
+.budget-input-group .custom-option {
+    font-family: 'Oswald', sans-serif !important; 
+    font-size: 1rem !important; 
+    color: #000000 !important; 
+    transition: none !important;
+    animation: none !important;
+}
+
+.budget-input-group .custom-option:hover {
+    background-color: #f0f0f0 !important; 
+}
+
+.budget-input-group .custom-option.selected {
+    background-color: #e0e0e0 !important;
+    font-weight: bold;
+}
+
+
+
+
+
+/* ===== Navigation Link Underline on Hover ===== */
+.nav-links a {
+    position: relative; /* Needed for absolute positioning of pseudo-element */
+    text-decoration: none; /* Remove default underline */
+    padding-bottom: 5px; /* Add padding to make space for underline */
+}
+
+.nav-links a::after {
+    content: ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Start with zero width */
+    height: 2px;
+    background-color: var(--accent); /* Use accent color */
+    transition: width 0.3s ease; /* Animate width */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Expand underline to full width on hover */
+}
+
+/* Adjust section header underline (already done, just confirming) */
+.section-header h2 {
+    position: relative;
+    display: inline-block; 
+    margin-bottom: 1rem;
+    padding-bottom: 10px; 
+}
+
+.section-header h2::after {
+    content: ";
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 4px;
+    background-color: var(--accent);
 }
 
