@@ -2145,17 +2145,20 @@ body.custom-cursor-active .custom-select-trigger:hover {
 
 
 
-/* ===== Hero Section Responsive Adjustments ===== */
+/* ===== Hero Section Responsive Adjustments (Updated for Larger Logo) ===== */
 @media (max-width: 992px) { /* Adjust breakpoint as needed for tablets */
     .hero-content {
-        flex-basis: 50%; /* Equal split on medium screens */
-        padding-right: 2rem;
+        flex-basis: 48%; /* Adjusted basis for tablet */
+        padding-right: 1.5rem;
     }
     .hero-image-container {
-        flex-basis: 45%; /* Slightly less for image */
+        flex-basis: 50%; /* Adjusted basis for tablet */
+    }
+    .hero-logo {
+        max-height: 60vh; /* Adjust max height for tablet */
     }
     .hero-content h1 {
-        font-size: 3.5rem; /* Slightly smaller heading */
+        font-size: 3.2rem; /* Slightly smaller heading */
     }
 }
 
@@ -2180,23 +2183,75 @@ body.custom-cursor-active .custom-select-trigger:hover {
     }
     .hero-image-container {
         flex-basis: auto; /* Reset basis */
-        width: 80%; /* Control logo width */
-        max-width: 350px; /* Max logo width on mobile */
+        width: 90%; /* Increased width for larger logo feel */
+        max-width: 400px; /* Increased max logo width on mobile */
         order: 1; /* Display image above text */
         height: auto; /* Adjust height */
         margin: 0 auto; /* Center container */
     }
     .hero-logo {
-        max-height: 40vh; /* Adjust max height for mobile */
+        max-height: 45vh; /* Slightly increased max height for mobile */
     }
     .hero-content h1 {
-        font-size: 2.8rem; /* Adjust heading size for mobile */
+        font-size: 2.5rem; /* Further adjust heading size for mobile */
     }
     .hero-content p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .hero-buttons {
         justify-content: center; /* Center buttons */
     }
 }
+
+
+
+
+/* ===== Hero Section Layout Update (Further Adjustments + Logo Size) ===== */
+.hero-flex-container {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space between text and image */
+    height: 100%; /* Ensure container takes full height */
+    width: 100%;
+}
+
+.hero-content {
+    flex-basis: 45%; /* Further reduced basis to push text left */
+    padding-right: 2rem; /* Keep some space */
+    padding-left: 0; /* Ensure no extra left padding */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.hero-image-container {
+    flex-basis: 55%; /* Increased basis for the larger image */
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    height: 100%; /* Ensure container takes full available height */
+}
+
+.hero-logo {
+    max-width: 90%; /* Allow logo to take most of its container width */
+    max-height: 85vh; /* Significantly increased max-height */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+/* Remove old placeholder styles if they exist */
+.hero-image-placeholder {
+    display: none; /* Hide old placeholder */
+}
+
+
+
+
+/* ===== Header Logo Alignment ===== */
+/* 
+  Alignment Note: The header logo (.logo) and the hero text block (.hero-content) 
+  are both positioned within a `.container` element which has consistent padding (0 1rem).
+  The `.hero-content` has `padding-left: 0;`, aligning it to the container's left padding edge.
+  The `.logo` is the first element in the `nav` flex container, also aligning it to the container's left padding edge.
+  Therefore, they should naturally align vertically along the same guide line.
+  No additional CSS is added here unless specific misalignment is observed.
+*/
 
