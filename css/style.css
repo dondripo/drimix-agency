@@ -330,7 +330,7 @@ nav {
     gap: 1rem;
 }
 
-/* ===== Section Headers ===== */
+/* ===== Section Headers (Updated Underline) ===== */
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -338,19 +338,20 @@ nav {
 
 .section-header h2 {
     position: relative;
-    display: inline-block;
+    display: inline-block; /* Changed to inline-block for width calculation */
     margin-bottom: 1rem;
+    padding-bottom: 10px; /* Add padding to make space for underline */
 }
 
 .section-header h2::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
+    bottom: 0; /* Position underline at the bottom */
+    left: 0; /* Align underline to the left of the inline-block */
+    width: 100%; /* Make underline match the width of the h2 */
     height: 4px;
     background-color: var(--accent);
+    /* Remove transform: translateX(-50%); as it's not needed with left: 0 and width: 100% */
 }
 
 .section-header p {
@@ -2206,7 +2207,7 @@ body.custom-cursor-active .custom-select-trigger:hover {
 
 
 
-/* ===== Hero Section Layout Update (Further Adjustments + Logo Size) ===== */
+/* ===== Hero Section Layout Update (200% Logo Increase + Text Shift) ===== */
 .hero-flex-container {
     display: flex;
     align-items: center; /* Vertically center items */
@@ -2216,14 +2217,14 @@ body.custom-cursor-active .custom-select-trigger:hover {
 }
 
 .hero-content {
-    flex-basis: 45%; /* Further reduced basis to push text left */
+    flex-basis: 35%; /* Significantly reduced basis to push text far left */
     padding-right: 2rem; /* Keep some space */
     padding-left: 0; /* Ensure no extra left padding */
     text-align: left; /* Ensure text is left-aligned */
 }
 
 .hero-image-container {
-    flex-basis: 55%; /* Increased basis for the larger image */
+    flex-basis: 65%; /* Increased basis for the much larger image */
     display: flex;
     justify-content: center; /* Horizontally center the image */
     align-items: center; /* Vertically center the image */
@@ -2231,8 +2232,9 @@ body.custom-cursor-active .custom-select-trigger:hover {
 }
 
 .hero-logo {
-    max-width: 90%; /* Allow logo to take most of its container width */
-    max-height: 85vh; /* Significantly increased max-height */
+    max-width: 100%; /* Allow logo to take full container width */
+    /* Aiming for ~200% visual size increase. Let's try a larger max-height */
+    max-height: 90vh; /* Further increased max-height */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below image */
 }
@@ -2254,4 +2256,55 @@ body.custom-cursor-active .custom-select-trigger:hover {
   Therefore, they should naturally align vertically along the same guide line.
   No additional CSS is added here unless specific misalignment is observed.
 */
+
+
+
+
+/* ===== Contact Form Font Consistency ===== */
+/* Ensure custom select trigger font matches other inputs */
+.budget-input-group .custom-select-trigger {
+    font-family: 'Oswald', sans-serif !important; /* Match input font */
+    font-size: 1rem !important; /* Match input font size (adjust if needed) */
+    color: #000000 !important; /* Ensure black text */
+    /* Keep other styles like padding, border, etc. */
+    border: 1px solid #e1e1e1;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    background-color: var(--white);
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    line-height: 1.6; /* Match input line height */
+    transition: none !important; /* Ensure no transition */
+    animation: none !important; /* Ensure no animation */
+}
+
+/* Ensure custom options font matches */
+.budget-input-group .custom-option {
+    font-family: 'Oswald', sans-serif !important; /* Match input font */
+    font-size: 1rem !important; /* Match input font size */
+    color: #000000 !important; /* Ensure black text */
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Re-apply hover/selected styles for options with correct font */
+.budget-input-group .custom-option:hover {
+    background-color: #f0f0f0 !important; /* Simple hover effect */
+}
+
+.budget-input-group .custom-option.selected {
+    background-color: #e0e0e0 !important;
+    font-weight: bold; /* Keep bold for selected */
+}
+
+/* Remove redundant/conflicting styles from previous budget section overrides if necessary */
+/* (Reviewing previous CSS additions for budget group) */
+/* The styles added previously for .budget-input-group .custom-select-trigger */
+/* and .budget-input-group .custom-option seem mostly compatible, */
+/* but let's ensure font-family and font-size are explicitly set here. */
+
 
