@@ -2104,3 +2104,99 @@ body.custom-cursor-active .custom-select-trigger:hover {
     cursor: pointer;
 }
 
+
+
+
+/* ===== Hero Section Layout Update ===== */
+.hero-flex-container {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space between text and image */
+    height: 100%; /* Ensure container takes full height */
+    width: 100%;
+}
+
+.hero-content {
+    flex-basis: 55%; /* Adjust text width - slightly more than half */
+    padding-right: 3rem; /* Add some space between text and image */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.hero-image-container {
+    flex-basis: 40%; /* Allocate space for the image */
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    height: 100%; /* Ensure container takes full available height */
+}
+
+.hero-logo {
+    max-width: 100%; /* Ensure logo scales down if needed */
+    max-height: 70vh; /* Limit logo height to prevent overflow */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+/* Remove old placeholder styles if they exist */
+.hero-image-placeholder {
+    display: none; /* Hide old placeholder */
+}
+
+
+
+
+/* ===== Hero Section Responsive Adjustments ===== */
+@media (max-width: 992px) { /* Adjust breakpoint as needed for tablets */
+    .hero-content {
+        flex-basis: 50%; /* Equal split on medium screens */
+        padding-right: 2rem;
+    }
+    .hero-image-container {
+        flex-basis: 45%; /* Slightly less for image */
+    }
+    .hero-content h1 {
+        font-size: 3.5rem; /* Slightly smaller heading */
+    }
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed for mobile */
+    .hero {
+        height: auto; /* Allow height to adjust to content */
+        min-height: 90vh; /* Still take significant height */
+        padding-top: 100px; /* Adjust padding for header */
+        padding-bottom: 4rem;
+    }
+    .hero-flex-container {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center text */
+    }
+    .hero-content {
+        flex-basis: auto; /* Reset basis */
+        width: 100%;
+        padding-right: 0; /* Remove padding */
+        order: 2; /* Display text below image */
+        text-align: center;
+        margin-top: 2rem; /* Add space above text */
+    }
+    .hero-image-container {
+        flex-basis: auto; /* Reset basis */
+        width: 80%; /* Control logo width */
+        max-width: 350px; /* Max logo width on mobile */
+        order: 1; /* Display image above text */
+        height: auto; /* Adjust height */
+        margin: 0 auto; /* Center container */
+    }
+    .hero-logo {
+        max-height: 40vh; /* Adjust max height for mobile */
+    }
+    .hero-content h1 {
+        font-size: 2.8rem; /* Adjust heading size for mobile */
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .hero-buttons {
+        justify-content: center; /* Center buttons */
+    }
+}
+
